@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+/* :root {
+    --clr-one: #13005A;
+    --clr-two: #00337C;
+    --clr-three: #1C82AD;
+    --clr-four: #03C988;
+
+    --clr-black: #0F1214;
+
+    --fs-big: clamp(1.1rem, 0.5rem + 1vw, 4rem);
+    --fs-med: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+    --fs-small: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+} */
+
+/* Scheme 2 */
+:root {
+    --clr-ten: #F7F2EE;
+    --clr-thirty: #E4CEC1;
+    --clr-sixty: #A4653C;
+
+    --clr-black: #0F1214;
+
+    --fs-big: clamp(1.1rem, 0.5rem + 1vw, 4rem);
+    --fs-med: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+    --fs-small: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+}
+
+
+/* Scheme 3 */
+/* :root {
+    --clr-one: #CB2D2E;
+    --clr-two: #F13A3A;
+    --clr-three: #D8D8D8;
+    --clr-four: #0696D3;
+    --clr-five: #1463B8;
+
+    --clr-black: #0F1214;
+
+    --fs-big: clamp(1.1rem, 0.5rem + 1vw, 4rem);
+    --fs-med: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+    --fs-small: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+} */
+
+
+/* Scheme 4 */
+/* :root {
+    --clr-one: #a6ddff;
+    --clr-two: #00b5d7;
+    --clr-three: #292929;
+
+    --clr-black: #0F1214;
+
+    --fs-big: clamp(1.1rem, 0.5rem + 1vw, 4rem);
+    --fs-med: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+    --fs-small: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+} */
+
+
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+    line-height: 2.825rem;
+    color: var(--clr-four);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-sixty);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: var(--fs-big);
+    line-height: 1.7rem;
+    letter-spacing: 0.08rem;
+
+    transition: all 500ms ease-in-out;
+}
+
+/* ============ Section Header ============== */
+nav {
+    position: relative;
+}
+
+.menu img {
+    top: 0.5rem;
+    right: 1rem;
+    width: 2.525rem;
+    position: absolute;
+}
+
+.unhide {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+#lines {
+    opacity: 0;
+}
+
+#cross {
+    position: fixed;
+    z-index: 100;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    /* font-weight: 800; */
+    margin-left: 1.5rem;
+    padding: 1.5rem 0;
+    font-family: 'Gruppo', cursive;
+}
+
+header nav ul {
+    display: flex;
+    position: absolute;
+    right: 1.825rem;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 1.5rem 0;
+    font-family: 'Gruppo', cursive;
+    font-weight: 800;
+
+    color: var(--clr-four);
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-thirty);
+    color: var(--clr-sixty);
+    /* border-radius: 50%; */
+
+    transform: translateX(100%);
+    transition: all 500ms ease-in-out;
+
+}
+
+.slide ul {
+    list-style: none;
+    line-height: 7rem;
+    letter-spacing: 0.4rem;
+    text-align: center;
+
+}
+
+/* ============ Section Generals ============== */
+section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0.4rem 0.5rem;
+    border: 3px solid var(--clr-thirty);
+    background-color: var(--clr-sixty);
+    cursor: pointer;
+    font-family: 'Gruppo', cursive;
+    color: var(--clr-black);
+
+    transition: all 250ms ease-in-out;
+
+}
+
+.img {
+    transition: transform 800ms ease-out;
+    animation: intro 1.2s ease-in-out;
+}
+
+@keyframes intro {
+    from {
+        transform: scale(1.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.img:hover {
+    transform: scale(1.1);
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+p {
+    margin: 1rem 0;
+}
+
+
+/* ============ Section Main ============== */
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--clr-sixty);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    align-items: center;
+    padding-inline: 2rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.08rem;
+    gap: 1rem;
+    font-size: var(--fs-med);
+
+    scroll-snap-align: start;
+}
+
+main .right {
+    overflow: hidden;
+}
+
+
+/* ============ Section One ============== */
+.sec-one {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    justify-items: end;
+    background-color: var(--clr-thirty);
+    overflow: hidden;
+    color: var(--clr-sixty);
+}
+
+.sec-one .left {
+    padding-left: 2rem;
+}
+
+.sec-one .right {
+    overflow: hidden;
+}
+
+/* ============ Section Two ============== */
+.sec-two {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: darkcyan;
+}
+
+.sec-two .top {
+    height: 400px;
+    margin-top: 3rem;
+    overflow: hidden;
+}
+
+.sec-two .bottom {
+    padding-inline: 2rem;
+}
+
+/* ============ Section Three ============== */
+.sec-three {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    background-color: var(--clr-sixty);
+    color: var(--clr-thirty);
+    overflow: hidden;
+    padding: 0;
+}
+
+.sec-three .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 400px;
+    line-height: 3rem;
+}
+
+.sec-three .right ul {
+    font-family: 'Gruppo', cursive;
+
+}
+
+.sec-three .left {
+    overflow: hidden;
+
+}
+
+/* ============ Section Footer ============== */
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    place-items: center;
+    color: var(--clr-thirty);
+}
+
+footer>* {
+    padding: 1rem 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    header nav ul {
+        display: none;
+    }
+
+    .lines {
+        display: block;
+    }
+
+    #lines {
+        opacity: 1;
+    }
+
+    .sec-one .left {
+        font-size: var(--fs-med);
+    }
+
+    .sec-three .right {
+        margin-left: 1rem;
+        width: auto;
+        font-size: var(--fs-med);
+    }
+
+    footer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        place-items: center;
+    }
+
+}
