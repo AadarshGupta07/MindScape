@@ -16,5 +16,3 @@ cross.addEventListener('click', () => {
 })
 
 
-
-
