@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+/* Scheme 2 */
+:root {
+    --clr-ten: #F7F2EE;
+    --clr-thirty: #E4CEC1;
+    --clr-sixty: #A4653C;
+
+    --clr-black: #090909;
+
+    --fs-big: clamp(1.1rem, 0.5rem + 1vw, 4rem);
+    --fs-med: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+    --fs-small: clamp(0.7rem, 0.5rem + 1vw, 4rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    margin: 1rem;
+    line-height: 2.8rem;
+}
+
+p,
+h4 {
+    line-height: 2rem;
+}
+
+p {
+    font-family: 'Gruppo', cursive;
+}
+
+body {
+    background: linear-gradient(180deg, #00C9FF 0%, #92FE9D 100%);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: var(--fs-med);
+    line-height: 1.7rem;
+    letter-spacing: 0.08rem;
+    margin: 1.25rem;
+    cursor:context-menu;
+}
+
+.logo {
+    font-family: 'Gruppo', cursive;
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.points-container {
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 2rem;
+    background-color: rgba(30, 30, 30, 0.482);
+    transition: transform 500ms ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.points-container > ul {
+    padding: 1.1rem;
+}
+
+.points-container:hover {
+    transform: scale(1.06);
+    background-color: rgba(58, 58, 58, 0.482);
+}
+
+html {
+    scrollbar-width: none;
+}
+
+.points-container:nth-of-type(even) {
+    align-self: flex-start;
+    animation: leftEntry 1s ease-in-out forwards;
+}
+
+.points-container:nth-of-type(odd) {
+    align-self: flex-end;
+    animation: rightEntry 1s ease-in-out forwards;
+
+}
+
+
+
+@keyframes leftEntry {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes rightEntry {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+    .points-container {
+        max-width: 500px;
+    }
+
+}
